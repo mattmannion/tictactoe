@@ -12,7 +12,7 @@ body {
 body {
   box-sizing: border-box;
   background: #111;
-  color: #ddd; }
+  color: white; }
 
 html {
   font-size: 62.5%;
@@ -21,8 +21,87 @@ html {
 .body-container {
   font-size: 2rem; }
 
+.ttt-board {
+  height: 20rem;
+  width: 10rem;
+  font-size: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center; }
+  .ttt-board__c-0 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-0:hover {
+      background-color: #333; }
+  .ttt-board__c-1 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-1:hover {
+      background-color: #333; }
+  .ttt-board__c-2 {
+    border-bottom: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-2:hover {
+      background-color: #333; }
+  .ttt-board__c-3 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-3:hover {
+      background-color: #333; }
+  .ttt-board__c-4 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-4:hover {
+      background-color: #333; }
+  .ttt-board__c-5 {
+    border-bottom: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-5:hover {
+      background-color: #333; }
+  .ttt-board__c-6 {
+    border-right: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-6:hover {
+      background-color: #333; }
+  .ttt-board__c-7 {
+    border-right: .2rem white solid;
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-7:hover {
+      background-color: #333; }
+  .ttt-board__c-8 {
+    cursor: pointer;
+    transition: all .5s; }
+    .ttt-board__c-8:hover {
+      background-color: #333; }
+
+[class*=c-] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.5rem;
+  width: 6.5rem; }
+
 .home {
-  font-size: 2rem; }
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column; }
+  .home__title {
+    margin: 2rem 0rem; }
 
 
 /*# sourceMappingURL=/imports.d025b1c5.css.map */

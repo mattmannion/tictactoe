@@ -12244,7 +12244,44 @@ var path = require('../internals/path');
 
 module.exports = path;
 
-},{"../es":"../../node_modules/core-js/es/index.js","../web":"../../node_modules/core-js/web/index.js","../internals/path":"../../node_modules/core-js/internals/path.js"}],"../typescript/index.ts":[function(require,module,exports) {
+},{"../es":"../../node_modules/core-js/es/index.js","../web":"../../node_modules/core-js/web/index.js","../internals/path":"../../node_modules/core-js/internals/path.js"}],"../typescript/models/GameBoard.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GameBoard = void 0;
+
+var GameBoard = function () {
+  function GameBoard() {
+    this.c0 = document.getElementById('c0');
+    this.c1 = document.getElementById('c1');
+    this.c2 = document.getElementById('c2');
+    this.c3 = document.getElementById('c3');
+    this.c4 = document.getElementById('c4');
+    this.c5 = document.getElementById('c5');
+    this.c6 = document.getElementById('c6');
+    this.c7 = document.getElementById('c7');
+    this.c8 = document.getElementById('c8');
+
+    this.setSq = function (element, value) {
+      if (value === void 0) {
+        value = '';
+      }
+
+      return element.innerHTML = value;
+    };
+
+    this.getSq = function (element) {
+      return element.innerHTML;
+    };
+  }
+
+  return GameBoard;
+}();
+
+exports.GameBoard = GameBoard;
+},{}],"../typescript/index.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12254,7 +12291,18 @@ Object.defineProperty(exports, "__esModule", {
 require("regenerator-runtime");
 
 require("core-js/stable");
-},{"regenerator-runtime":"../../node_modules/regenerator-runtime/runtime.js","core-js/stable":"../../node_modules/core-js/stable/index.js"}],"../../../../../../home/matt/.nvm/versions/node/v15.5.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+var GameBoard_1 = require("./models/GameBoard");
+
+var gb = new GameBoard_1.GameBoard();
+gb.c0.addEventListener('click', function (e) {
+  return console.log('c0:', e.x);
+});
+
+(function game() {
+  console.log('c0: ', gb.getSq(gb.c0));
+})();
+},{"regenerator-runtime":"../../node_modules/regenerator-runtime/runtime.js","core-js/stable":"../../node_modules/core-js/stable/index.js","./models/GameBoard":"../typescript/models/GameBoard.ts"}],"../../../../../../home/matt/.nvm/versions/node/v15.5.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12282,7 +12330,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53602" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55295" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

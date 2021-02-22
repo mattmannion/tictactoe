@@ -1,0 +1,64 @@
+.ttt-board {
+  height: 20rem;
+  width: 10rem;
+  font-size: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+
+  &__c-0 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-1 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-2 {
+    border-bottom: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-3 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-4 {
+    border-bottom: .2rem white solid;
+    border-right: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-5 {
+    border-bottom: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-6 {
+    border-right: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-7 {
+    border-right: .2rem white solid;
+    @include cellHover;
+  }
+
+  &__c-8 {
+    @include cellHover;
+  }
+}
+
+[class*=c-] {
+  @include centerFlex;
+  $cell-size: 6.5rem;
+  height: $cell-size;
+  width: $cell-size;
+}

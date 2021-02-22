@@ -1,3 +1,9 @@
 .home {
   font-size: 2rem;
+  @include centerFlex;
+  flex-flow: column;
+
+  &__title {
+    margin: 2rem 0rem;
+  }
 }

@@ -25,3 +25,12 @@
   background-attachment: fixed;
   background-position: center;
 }
+
+@mixin cellHover {
+  cursor: pointer;
+  transition: all .5s;
+
+  &:hover {
+    background-color: #333;
+  }
+}
