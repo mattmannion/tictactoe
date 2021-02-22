@@ -1,0 +1,46 @@
+html {
+  // this makes 1rem = 10px
+  // derived from 10px/16 px 
+  // useful for responsive layouts
+  font-size: 62.5%;
+
+  // replace these with your choice 
+  font-family: Arial, Helvetica, sans-serif;
+
+  // optional media queries
+  // @include respond(fourK) {
+  //   font-size: 150%;
+  // }
+
+  // @include respond(desktop) {
+  //   font-size: 100%;
+  // }
+
+  // @include respond(desktop-s) {
+  //   font-size: 90%;
+  // }
+
+  // @include respond(fourthree) {
+  //   font-size: 85%;
+  // }
+
+  // @include respond(tab) {
+  //   font-size: 100%;
+  // }
+
+  // @include respond(phone-m) {
+  //   font-size: 55%;
+  // }
+
+  // @include respond(phone-s) {
+  //   font-size: 45%;
+  // }
+
+  // @include respond(phone-xs) {
+  //   font-size: 35%;
+  // }
+}
+
+.body-container {
+  font-size: 2rem;
+}

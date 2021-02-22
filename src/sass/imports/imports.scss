@@ -1,0 +1,23 @@
+///////////////////////////////////////////
+///////  THIS FILE LIVES IN ITS OWN  //////
+///////   FOLDER TO PREVENT A VERY   //////
+///////  ANNOYING BUG FROM HAPPENING //////
+///////////////////////////////////////////
+///////    SEE README FOR DETAILS    //////
+///////////////////////////////////////////
+
+
+///////////////////////////////////////////
+//// Anything with global propertiess /////
+////  goes to the top of the imports  /////
+//// ex: mixins, vars, vendors, ect.../////
+///////////////////////////////////////////
+
+@import '../abst/mixins';
+@import '../abst/mq_manager';
+@import '../abst/variables';
+
+@import '../base/reset';
+@import '../base/typography';
+
+@import '../pages/home'
