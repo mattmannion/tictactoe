@@ -1,55 +1,57 @@
 .ttt-board {
-  $board-size: 20rem;
-  height: $board-size;
-  width: $board-size;
   font-size: 5rem;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
+  $board-size: 20rem;
+  height: $board-size;
+  width: $board-size;
+
   overflow: hidden;
 
   &__c-0 {
-    border-bottom: .2rem white solid;
-    border-right: .2rem white solid;
+    border-bottom: 0.2rem white solid;
+    border-right: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-1 {
-    border-bottom: .2rem white solid;
-    border-right: .2rem white solid;
+    border-bottom: 0.2rem white solid;
+    border-right: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-2 {
-    border-bottom: .2rem white solid;
+    border-bottom: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-3 {
-    border-bottom: .2rem white solid;
-    border-right: .2rem white solid;
+    border-bottom: 0.2rem white solid;
+    border-right: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-4 {
-    border-bottom: .2rem white solid;
-    border-right: .2rem white solid;
+    border-bottom: 0.2rem white solid;
+    border-right: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-5 {
-    border-bottom: .2rem white solid;
+    border-bottom: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-6 {
-    border-right: .2rem white solid;
+    border-right: 0.2rem white solid;
     @include cellHover;
   }
 
   &__c-7 {
-    border-right: .2rem white solid;
+    border-right: 0.2rem white solid;
     @include cellHover;
   }
 
@@ -58,7 +60,7 @@
   }
 }
 
-[class*=c-] {
+[class*='c-'] {
   @include centerFlex;
   $cell-size: 6.6rem;
   height: $cell-size;
