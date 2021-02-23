@@ -12277,6 +12277,18 @@ var GameBoard = function () {
     this.checkSq = function (sq) {
       return _this.getSq(sq).innerText.length === 0 ? true : false;
     };
+
+    this.resetGB = function () {
+      _this.c0.innerText = '';
+      _this.c1.innerText = '';
+      _this.c2.innerText = '';
+      _this.c3.innerText = '';
+      _this.c4.innerText = '';
+      _this.c5.innerText = '';
+      _this.c6.innerText = '';
+      _this.c7.innerText = '';
+      _this.c8.innerText = '';
+    };
   }
 
   return GameBoard;
@@ -12353,6 +12365,7 @@ function handleEvent(cell) {
 }
 
 (function () {
+  gb.resetGB();
   state.currentTurn = p.firstPlayer();
   console.log('first turn', state.currentTurn);
   gb.c0.addEventListener('click', function () {

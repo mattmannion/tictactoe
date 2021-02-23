@@ -22,6 +22,7 @@ function handleEvent(cell: HTMLElement) {
 
 // Main IIFE
 (() => {
+  gb.resetGB();
   state.currentTurn = p.firstPlayer();
   console.log('first turn', state.currentTurn);
 
