@@ -18,7 +18,7 @@
     "gzip:all": "run-p gzip:js gzip:css gzip:html",
     "start": "run-s rf:d clear parcel:d",
     "tb": "run-s rf:d rf:c clear parcel:p gzip:all hs",
-    "build": "run-s rf:d rf:c parcel:p nord",
+    "build": "run-s rf:d rf:c parcel:p",
     "tsinit": "touch tsconfig.json && npm i -D typescript @types/react @types/react-dom @types/react-router-dom",
     "tsUN": "rm tsconfig.json && npm un-D typescript @types/react @types/react-dom @types/react-router-dom ",
     "setup": "find . -name \".gitkeep\" -type f -delete && rm -rf .git && git init && npm i"
