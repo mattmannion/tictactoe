@@ -12309,7 +12309,7 @@ var Player = function () {
     };
 
     this.playerTurn = function () {
-      return _this.currentPlayer === _this.o ? _this.setPlayer(_this.x) : _this.setPlayer(_this.o);
+      return _this.currentPlayer === _this.x ? _this.setPlayer(_this.o) : _this.setPlayer(_this.x);
     };
 
     this.firstPlayer = function () {
@@ -12337,51 +12337,50 @@ var GameBoard_1 = require("./models/GameBoard");
 var Player_1 = require("./models/Player");
 
 var gb = new GameBoard_1.GameBoard();
-var player = new Player_1.Player();
+var p = new Player_1.Player();
 var state = {
   scoreX: 0,
   scoreO: 0,
-  currentTurn: player.currentPlayer
+  currentTurn: p.currentPlayer
 };
 
-function handleEvent(cell, state) {
-  state = player.playerTurn();
-
+function handleEvent(cell) {
   if (gb.checkSq(cell)) {
-    gb.setSq(cell, state);
-    console.log(state);
+    gb.setSq(cell, state.currentTurn);
   } else return;
+
+  state.currentTurn = p.playerTurn();
 }
 
 (function () {
-  state.currentTurn = player.firstPlayer();
+  state.currentTurn = p.firstPlayer();
   console.log('first turn', state.currentTurn);
   gb.c0.addEventListener('click', function () {
-    return handleEvent(gb.c0, state.currentTurn);
+    return handleEvent(gb.c0);
   });
   gb.c1.addEventListener('click', function () {
-    return handleEvent(gb.c1, state.currentTurn);
+    return handleEvent(gb.c1);
   });
   gb.c2.addEventListener('click', function () {
-    return handleEvent(gb.c2, state.currentTurn);
+    return handleEvent(gb.c2);
   });
   gb.c3.addEventListener('click', function () {
-    return handleEvent(gb.c3, state.currentTurn);
+    return handleEvent(gb.c3);
   });
   gb.c4.addEventListener('click', function () {
-    return handleEvent(gb.c4, state.currentTurn);
+    return handleEvent(gb.c4);
   });
   gb.c5.addEventListener('click', function () {
-    return handleEvent(gb.c5, state.currentTurn);
+    return handleEvent(gb.c5);
   });
   gb.c6.addEventListener('click', function () {
-    return handleEvent(gb.c6, state.currentTurn);
+    return handleEvent(gb.c6);
   });
   gb.c7.addEventListener('click', function () {
-    return handleEvent(gb.c7, state.currentTurn);
+    return handleEvent(gb.c7);
   });
   gb.c8.addEventListener('click', function () {
-    return handleEvent(gb.c8, state.currentTurn);
+    return handleEvent(gb.c8);
   });
 })();
 },{"regenerator-runtime":"../../node_modules/regenerator-runtime/runtime.js","core-js/stable":"../../node_modules/core-js/stable/index.js","./models/GameBoard":"../typescript/models/GameBoard.ts","./models/Player":"../typescript/models/Player.ts"}],"../../../../../../home/matt/.nvm/versions/node/v15.5.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -12412,7 +12411,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61845" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49548" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

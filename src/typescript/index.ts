@@ -5,34 +5,33 @@ import { Player } from './models/Player';
 
 // Initial values
 const gb = new GameBoard();
-const player = new Player();
+const p = new Player();
 
 const state = {
   scoreX: 0,
   scoreO: 0,
-  currentTurn: player.currentPlayer,
+  currentTurn: p.currentPlayer,
 };
 
-function handleEvent(cell: HTMLElement, state: string) {
-  state = player.playerTurn();
+function handleEvent(cell: HTMLElement) {
   if (gb.checkSq(cell)) {
-    gb.setSq(cell, state);
-    console.log(state);
+    gb.setSq(cell, state.currentTurn);
   } else return;
+  state.currentTurn = p.playerTurn();
 }
 
 // Main IIFE
 (() => {
-  state.currentTurn = player.firstPlayer();
+  state.currentTurn = p.firstPlayer();
   console.log('first turn', state.currentTurn);
 
-  gb.c0.addEventListener('click', () => handleEvent(gb.c0, state.currentTurn));
-  gb.c1.addEventListener('click', () => handleEvent(gb.c1, state.currentTurn));
-  gb.c2.addEventListener('click', () => handleEvent(gb.c2, state.currentTurn));
-  gb.c3.addEventListener('click', () => handleEvent(gb.c3, state.currentTurn));
-  gb.c4.addEventListener('click', () => handleEvent(gb.c4, state.currentTurn));
-  gb.c5.addEventListener('click', () => handleEvent(gb.c5, state.currentTurn));
-  gb.c6.addEventListener('click', () => handleEvent(gb.c6, state.currentTurn));
-  gb.c7.addEventListener('click', () => handleEvent(gb.c7, state.currentTurn));
-  gb.c8.addEventListener('click', () => handleEvent(gb.c8, state.currentTurn));
+  gb.c0.addEventListener('click', () => handleEvent(gb.c0));
+  gb.c1.addEventListener('click', () => handleEvent(gb.c1));
+  gb.c2.addEventListener('click', () => handleEvent(gb.c2));
+  gb.c3.addEventListener('click', () => handleEvent(gb.c3));
+  gb.c4.addEventListener('click', () => handleEvent(gb.c4));
+  gb.c5.addEventListener('click', () => handleEvent(gb.c5));
+  gb.c6.addEventListener('click', () => handleEvent(gb.c6));
+  gb.c7.addEventListener('click', () => handleEvent(gb.c7));
+  gb.c8.addEventListener('click', () => handleEvent(gb.c8));
 })();

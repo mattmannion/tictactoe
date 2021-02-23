@@ -11,9 +11,9 @@ export class Player {
   setPlayer = (cp: string): string => (this.currentPlayer = cp);
 
   playerTurn = (): string =>
-    this.currentPlayer === this.o
-      ? this.setPlayer(this.x)
-      : this.setPlayer(this.o);
+    this.currentPlayer === this.x
+      ? this.setPlayer(this.o)
+      : this.setPlayer(this.x);
 
   firstPlayer = (): string =>
     Math.trunc(Math.random() * 2) === 1
