@@ -1,0 +1,8 @@
+.footer {
+  @include centerFlex;
+  margin-top: 5rem;
+
+  &__info {
+    font-size: 1.2rem;
+  }
+}

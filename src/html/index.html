@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="../typescript/index.ts"></script>
+    <link rel="stylesheet" href="../sass/imports/imports.scss" />
+    <link rel="icon" href="./ttt-icon.png" />
+    <title>Tic Tac Toe</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="../typescript/index.ts"></script>
-  <link rel="stylesheet" href="../sass/imports/imports.scss">
-  <link rel="icon" href="./ttt-icon.png">
-  <title>Tic Tac Toe</title>
-</head>
-
-<body>
-  <main class='home'>
-    <h1 class='home__title'>Tic Tac Toe</h1>
-    <header class='header'>
-      <div class="header__scores">
-        <span id='scoreX'></span>
-        <span id='scoreO'></span>
+  <body>
+    <main class="home">
+      <h1 class="home__title">Tic Tac Toe</h1>
+      <header class="header">
+        <div class="header__scores">
+          <span>X: <span id="scoreX"></span></span>
+          <span>&nbsp;|&nbsp;</span>
+          <span>O: <span id="scoreO"></span></span>
+        </div>
+        <p class="header__player-turn" id="player-turn"></p>
+      </header>
+      <div class="ttt-board">
+        <div class="ttt-board__c-0" id="c0"></div>
+        <div class="ttt-board__c-1" id="c1"></div>
+        <div class="ttt-board__c-2" id="c2"></div>
+        <div class="ttt-board__c-3" id="c3"></div>
+        <div class="ttt-board__c-4" id="c4"></div>
+        <div class="ttt-board__c-5" id="c5"></div>
+        <div class="ttt-board__c-6" id="c6"></div>
+        <div class="ttt-board__c-7" id="c7"></div>
+        <div class="ttt-board__c-8" id="c8"></div>
       </div>
-      <p class='header__player-turn' id='player-turn'></p>
-    </header>
-    <div class='ttt-board'>
-      <div class='ttt-board__c-0' id='c0'></div>
-      <div class='ttt-board__c-1' id='c1'></div>
-      <div class='ttt-board__c-2' id='c2'></div>
-      <div class='ttt-board__c-3' id='c3'></div>
-      <div class='ttt-board__c-4' id='c4'></div>
-      <div class='ttt-board__c-5' id='c5'></div>
-      <div class='ttt-board__c-6' id='c6'></div>
-      <div class='ttt-board__c-7' id='c7'></div>
-      <div class='ttt-board__c-8' id='c8'></div>
-    </div>
-  </main>
-</body>
-
+    </main>
+    <section class="controls">
+      <button class="controls__reset btn" type="reset" id="reset">Reset</button>
+      <button
+        class="controls__play-again btn"
+        type="play-again"
+        id="play-again"
+      >
+        Play again
+      </button>
+    </section>
+    <footer class="footer">
+      <p class="footer__info">Matt Mannion &copy; 2021</p>
+    </footer>
+  </body>
 </html>
