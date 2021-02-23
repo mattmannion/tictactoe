@@ -1,4 +1,7 @@
 export class Player {
+  sX = <HTMLElement>document.getElementById('scoreX');
+  sO = <HTMLElement>document.getElementById('scoreO');
+  pt = <HTMLElement>document.getElementById('player-turn');
   x = 'X';
   o = 'O';
   e = '';

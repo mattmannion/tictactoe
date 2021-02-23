@@ -18,13 +18,17 @@ function handleEvent(cell: HTMLElement) {
     gb.setSq(cell, state.currentTurn);
   } else return;
   state.currentTurn = p.playerTurn();
+  p.pt.innerText = `It's ${state.currentTurn}'s turn!`;
 }
 
 // Main IIFE
 (() => {
   gb.resetGB();
   state.currentTurn = p.firstPlayer();
-  console.log('first turn', state.currentTurn);
+  p.pt.innerText = `It's ${state.currentTurn}'s turn!`;
+
+  p.sX.innerText = `X: ${state.scoreX} | `;
+  p.sO.innerText = `O: ${state.scoreO}`;
 
   gb.c0.addEventListener('click', () => handleEvent(gb.c0));
   gb.c1.addEventListener('click', () => handleEvent(gb.c1));

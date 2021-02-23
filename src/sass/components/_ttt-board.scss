@@ -1,11 +1,13 @@
 .ttt-board {
-  height: 20rem;
-  width: 10rem;
+  $board-size: 20rem;
+  height: $board-size;
+  width: $board-size;
   font-size: 5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   &__c-0 {
     border-bottom: .2rem white solid;
@@ -58,7 +60,7 @@
 
 [class*=c-] {
   @include centerFlex;
-  $cell-size: 6.5rem;
+  $cell-size: 6.6rem;
   height: $cell-size;
   width: $cell-size;
   -webkit-touch-callout: none;

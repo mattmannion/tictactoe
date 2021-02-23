@@ -1,0 +1,9 @@
+.header {
+  @include centerFlex;
+  flex-flow: column;
+  margin-bottom: 2.5rem;
+
+  &__scores {
+    margin-bottom: 1rem;
+  }
+}
