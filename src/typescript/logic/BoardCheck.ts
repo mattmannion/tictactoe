@@ -1,7 +1,7 @@
 import { GameBoard } from '../models/GameBoard';
 import { Player } from '../models/Player';
 
-const boardCheck = (gb: GameBoard, player: Player): boolean => {
+export const boardCheck = (gb: GameBoard, player: Player): boolean => {
   const c0 = gb.c0.innerText;
   const c1 = gb.c1.innerText;
   const c2 = gb.c2.innerText;
@@ -79,5 +79,3 @@ const boardCheck = (gb: GameBoard, player: Player): boolean => {
     return false;
   } else return true;
 };
-
-export default boardCheck;

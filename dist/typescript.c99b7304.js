@@ -12254,6 +12254,8 @@ exports.GameBoard = void 0;
 
 var GameBoard = function () {
   function GameBoard() {
+    var _this = this;
+
     this.c0 = document.getElementById('c0');
     this.c1 = document.getElementById('c1');
     this.c2 = document.getElementById('c2');
@@ -12264,16 +12266,16 @@ var GameBoard = function () {
     this.c7 = document.getElementById('c7');
     this.c8 = document.getElementById('c8');
 
-    this.setSq = function (element, value) {
-      if (value === void 0) {
-        value = '';
-      }
-
-      return element.innerHTML = value;
+    this.getSq = function (e) {
+      return e;
     };
 
-    this.getSq = function (element) {
-      return element.innerHTML;
+    this.setSq = function (e, value) {
+      return e.innerHTML = value;
+    };
+
+    this.checkSq = function (sq) {
+      return _this.getSq(sq).innerText.length === 0 ? true : false;
     };
   }
 
@@ -12281,6 +12283,44 @@ var GameBoard = function () {
 }();
 
 exports.GameBoard = GameBoard;
+},{}],"../typescript/models/Player.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Player = void 0;
+
+var Player = function () {
+  function Player() {
+    var _this = this;
+
+    this.x = 'X';
+    this.o = 'O';
+    this.e = '';
+    this.currentPlayer = '';
+
+    this.resetCurrentPlayer = function () {
+      return _this.currentPlayer = _this.e;
+    };
+
+    this.setPlayer = function (cp) {
+      return _this.currentPlayer = cp;
+    };
+
+    this.playerTurn = function () {
+      return _this.currentPlayer === _this.o ? _this.setPlayer(_this.x) : _this.setPlayer(_this.o);
+    };
+
+    this.firstPlayer = function () {
+      return Math.trunc(Math.random() * 2) === 1 ? _this.setPlayer(_this.x) : _this.setPlayer(_this.o);
+    };
+  }
+
+  return Player;
+}();
+
+exports.Player = Player;
 },{}],"../typescript/index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -12294,15 +12334,57 @@ require("core-js/stable");
 
 var GameBoard_1 = require("./models/GameBoard");
 
-var gb = new GameBoard_1.GameBoard();
-gb.c0.addEventListener('click', function (e) {
-  return console.log('c0:', e.x);
-});
+var Player_1 = require("./models/Player");
 
-(function game() {
-  console.log('c0: ', gb.getSq(gb.c0));
+var gb = new GameBoard_1.GameBoard();
+var player = new Player_1.Player();
+var state = {
+  scoreX: 0,
+  scoreO: 0,
+  currentTurn: player.currentPlayer
+};
+
+function handleEvent(cell, state) {
+  state = player.playerTurn();
+
+  if (gb.checkSq(cell)) {
+    gb.setSq(cell, state);
+    console.log(state);
+  } else return;
+}
+
+(function () {
+  state.currentTurn = player.firstPlayer();
+  console.log('first turn', state.currentTurn);
+  gb.c0.addEventListener('click', function () {
+    return handleEvent(gb.c0, state.currentTurn);
+  });
+  gb.c1.addEventListener('click', function () {
+    return handleEvent(gb.c1, state.currentTurn);
+  });
+  gb.c2.addEventListener('click', function () {
+    return handleEvent(gb.c2, state.currentTurn);
+  });
+  gb.c3.addEventListener('click', function () {
+    return handleEvent(gb.c3, state.currentTurn);
+  });
+  gb.c4.addEventListener('click', function () {
+    return handleEvent(gb.c4, state.currentTurn);
+  });
+  gb.c5.addEventListener('click', function () {
+    return handleEvent(gb.c5, state.currentTurn);
+  });
+  gb.c6.addEventListener('click', function () {
+    return handleEvent(gb.c6, state.currentTurn);
+  });
+  gb.c7.addEventListener('click', function () {
+    return handleEvent(gb.c7, state.currentTurn);
+  });
+  gb.c8.addEventListener('click', function () {
+    return handleEvent(gb.c8, state.currentTurn);
+  });
 })();
-},{"regenerator-runtime":"../../node_modules/regenerator-runtime/runtime.js","core-js/stable":"../../node_modules/core-js/stable/index.js","./models/GameBoard":"../typescript/models/GameBoard.ts"}],"../../../../../../home/matt/.nvm/versions/node/v15.5.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"regenerator-runtime":"../../node_modules/regenerator-runtime/runtime.js","core-js/stable":"../../node_modules/core-js/stable/index.js","./models/GameBoard":"../typescript/models/GameBoard.ts","./models/Player":"../typescript/models/Player.ts"}],"../../../../../../home/matt/.nvm/versions/node/v15.5.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12330,7 +12412,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61637" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61845" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

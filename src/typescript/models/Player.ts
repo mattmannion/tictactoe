@@ -5,12 +5,18 @@ export class Player {
 
   currentPlayer = '';
 
+  // Player Methods
   resetCurrentPlayer = (): string => (this.currentPlayer = this.e);
 
   setPlayer = (cp: string): string => (this.currentPlayer = cp);
-}
 
-export const playerTurn = (p: Player): string => {
-  if (p.currentPlayer === p.x) return p.setPlayer(p.o);
-  else return p.setPlayer(p.x);
-};
+  playerTurn = (): string =>
+    this.currentPlayer === this.o
+      ? this.setPlayer(this.x)
+      : this.setPlayer(this.o);
+
+  firstPlayer = (): string =>
+    Math.trunc(Math.random() * 2) === 1
+      ? this.setPlayer(this.x)
+      : this.setPlayer(this.o);
+}

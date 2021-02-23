@@ -92,7 +92,10 @@ html {
   justify-content: center;
   align-items: center;
   height: 6.5rem;
-  width: 6.5rem; }
+  width: 6.5rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none; }
 
 .home {
   font-size: 2rem;

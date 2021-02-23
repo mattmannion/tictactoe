@@ -11,8 +11,10 @@ export class GameBoard {
   c8 = <HTMLElement>document.getElementById('c8');
 
   // GameBoard Methods
-  setSq = (element: HTMLElement, value = ''): string =>
-    (element.innerHTML = value);
+  getSq = (e: HTMLElement): HTMLElement => e;
 
-  getSq = (element: HTMLElement): string => element.innerHTML;
+  setSq = (e: HTMLElement, value: string): string => (e.innerHTML = value);
+
+  checkSq = (sq: HTMLElement): boolean =>
+    this.getSq(sq).innerText.length === 0 ? true : false;
 }
